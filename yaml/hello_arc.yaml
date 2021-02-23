@@ -34,3 +34,14 @@ spec:
         env:
         - name: MESSAGE
           value: Hello Azure Community!
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-arc
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 80
+  selector:
+    app: hello-arc
